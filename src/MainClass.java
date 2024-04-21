@@ -1,115 +1,51 @@
-import java.awt.*;
-import java.util.Scanner;
+import java.util.*;
 
-public class MainClass
+public class MainClass 
 {
-	static Scanner in = new Scanner(System.in);
+    static char[][] campo = new char[10][10];
+    static int tentativi = 0;
+    static Scanner scanner = new Scanner(System.in);
 
-	// Numero di pixel di altezza (righe)
-	static int altezza = 400;
+    public static void main(String[] args) 
+    {
+        inizializzaCampo();
+        // creare un ciclo per ogni nave
+        posizionaNave(1, 2, 3, true); // sostituire questi parametri attuali con quelli random
+        // Continuare ad attaccare fino alla vittoria
+        attacco();
+        checkVittoria();
+        stampaCampo();
 
-	// Numero di pixel di larghezza (colonne)
-	static int larghezza = 400;
+    }
+    
+    // Inizializza il campo con spazi vuoti
+    static void inizializzaCampo() 
+    {
 
-	// Numero di pixel di larghezza (colonne)
-	static int fps = 10;
+    }
 
-	// Creo una finestra con un titolo 
-	static Finestra finestra = new Finestra("Finestra", larghezza, altezza, fps);
+    // Posiziona le navi sul campo
+    static boolean posizionaNave(int i, int j, int lunghezza, boolean verticale) 
+    {
+    	// Dovrà restituire "true" se non ci sono sovrapposizoni
+    	return false; 
+    }
 
-	// Creo una matrice di pixel
-	//static Color[][] immagine = new Color[altezza][larghezza];
+    // Esegue un'attacco
+    static void attacco() 
+    {
 
-	public static void main(String[] args) 
-	{
-		while(true)
-		{
-			stampaMenu();
-			switch (Integer.parseInt(in.nextLine())) 
-			{
-			case 1: 
-				es1();
-				break;
+    }
 
-			case 2:
-				es2();
-				break;
+    // Verifica se tutte le navi sono state affondate
+    static boolean checkVittoria() 
+    {
+    	return false; // Se non ci sono più X la partita è vinta!
+    }
 
-			case 3:
-				es3();
-				break;
+    // Stampa il campo di gioco
+    static void stampaCampo() 
+    {
 
-			case 4:
-				es4();
-				break;
-
-			case 5:
-				es5();
-				break;
-
-			default:
-				System.out.println("Scelta errata, riporva!");
-			}
-		}
-	}
-
-	static void stampaMenu()
-	{
-		String s = 
-		"1 - Rinomina con nome esesercizio 1\n" +
-		"2 - Rinomina con nome esesercizio 2\n" +
-		"3 - Rinomina con nome esesercizio 3\n" +
-		"4 - Rinomina con nome esesercizio 4\n" +
-		"5 - Rinomina con nome esesercizio 5\n";
-		System.out.println(s);
-	}
-
-	// Esercizio di prova
-	public static void prova()
-	{
-		// 255 fotogrammi
-		for(int k = 0; k < 255; k++)
-		{
-			// creo un nuovo fotogramma
-			Color[][] immagine = new Color[altezza][larghezza];
-			// righe del fotogramma
-			for(int i = 0; i < immagine.length; i++) 
-			{
-				// colonne del fotogramma
-				for(int j = 0; j < immagine[0].length; j++) 
-				{
-					// colore del fotogramma
-					immagine[i][j] = new Color(k,k,k);		
-				}
-			}
-			// Quando finisco di disegnare il fotogramma lo metto in coda per il disegno
-			finestra.disegna(immagine);
-		}
-	}
-	
-	public static void es1()
-	{
-		System.out.println("Esercizio 1");
-	}
-
-	public static void es2()
-	{
-		System.out.println("Esercizio 2");
-	}
-
-	public static void es3()
-	{
-		System.out.println("Esercizio 3");
-
-	}
-
-	public static void es4()
-	{
-		System.out.println("Esercizio 4");
-	}
-
-	public static void es5()
-	{
-		System.out.println("Esercizio 5");
-	}
+    }
 }
